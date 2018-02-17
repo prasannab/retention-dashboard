@@ -23,15 +23,22 @@ class FileView(APIView):
 
       # Unzip the file, creating subdirectories as needed
       zfobj = zipfile.ZipFile(fullpath, 'r')
+      if not os.path.isdir(os.path.join(dirname, 'links')):
+          os.mkdir(os.path.join(dirname, 'links'))
+      if not os.path.isdir(os.path.join(dirname+'/links', 'includes')):
+          os.mkdir(os.path.join(dirname+'/links', 'includes'))
+      if not os.path.isdir(os.path.join(dirname+'/links/includes', 'script')):
+          os.mkdir(os.path.join(dirname+'/links/includes', 'script'))
+      if not os.path.isdir(os.path.join(dirname+'/links/includes', 'style')):
+          os.mkdir(os.path.join(dirname+'/links/includes', 'style'))
       for name in zfobj.namelist():
-          if not os.path.isdir(os.path.join(dirname, 'links')):
-              os.mkdir(os.path.join(dirname, 'links'))
           if name.endswith('/'):
               try: # Don't try to create a directory if exists
                   os.mkdir(os.path.join(dirname, name))
               except:
                   pass
           else:
+              print(name)
               outfile = open(os.path.join(dirname, name), 'wb')
               outfile.write(zfobj.read(name))
               outfile.close()
