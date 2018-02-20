@@ -38,7 +38,6 @@ class FileView(APIView):
               except:
                   pass
           else:
-              print(name)
               outfile = open(os.path.join(dirname, name), 'wb')
               outfile.write(zfobj.read(name))
               outfile.close()
