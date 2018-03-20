@@ -6,6 +6,6 @@
 
 {% block content %}
 <h1>{% trans "Social Network Login Failure" %}</h1>
-
-<p>{% trans "An error occurred while attempting to login via your social network account." %}</p>
+Code: {{ auth_error.code }}, Error: {{ auth_error.exception }}
+<p>{% trans "Please ping Prasanna Balaraman to get access." %}</p>
 {% endblock %}

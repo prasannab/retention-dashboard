@@ -7,12 +7,11 @@
 
 {% block content %}
 
-<h1>{% trans "Sign In" %}</h1>
+<h1>{% trans "Sign In with Freshworks Google Account" %}</h1>
 
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with Freshworks Google Account.{% endblocktrans %}</p>
 
 <div class="socialaccount_ballot">
 

@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','ec2-18-216-42-154.us-east-2.compute.amazonaws.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -145,11 +144,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"), )
 
 #AUTH_USER_MODEL = 'profiles_api.UserProfile'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-#ACCOUNT_ADAPTER = 'file_app.account_adapter.NoNewUsersAccountAdapter'
+ACCOUNT_ADAPTER = 'file_app.account_adapter.NoNewUsersAccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'file_app.account_adapter.MySocialAccount'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SITE_ID = 2
+#AUTH_USER_MODEL = 'file_app.UserProfile'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
