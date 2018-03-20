@@ -25,7 +25,7 @@ SECRET_KEY = ')-spf%14!&&8&+jf=b4)qj(#mpw7w%hi&@n)^@ua3tr0sab!)0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','ec2-18-216-42-154.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['127.0.0.1','ec2-18-216-42-154.us-east-2.compute.amazonaws.com','52.91.170.196']
 
 # Application definition
 
@@ -154,7 +154,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 ACCOUNT_ADAPTER = 'file_app.account_adapter.NoNewUsersAccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'file_app.account_adapter.MySocialAccount'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-SITE_ID = 2
+SITE_ID = 4
 #AUTH_USER_MODEL = 'file_app.UserProfile'
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
